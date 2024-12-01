@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./Navbar.css";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [dropdown, setDropdown] = useState(null);
@@ -21,13 +22,14 @@ const Navbar = () => {
                 <div className={`line ${isOpen ? 'open' : ''}`}></div>
             </div>
             <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
+                <li><Link to="/home">Home</Link></li>
                 <li onMouseEnter={() => toggleDropdown('strategic')} onMouseLeave={() => toggleDropdown(null)}>
                     <a href="strategic-planning">Strategic Planning</a>
                     {dropdown === 'strategic' && (
                         <ul className="dropdown">
-                            <li><a href="#goal-setting">Goal Setting</a></li>
-                            <li><a href="#Market_Analysis">Market Analysis</a></li>
-                            <li><a href="#resource-allocation">Resource Allocation</a></li>
+                            <li><Link to="goal_setting">Goal Setting</Link></li>
+                            <li><Link to="Market_Analysis">Market Analysis</Link></li>
+                            <li><Link to="resource-allocation">Resource Allocation</Link></li>
                         </ul>
                     )}
                 </li>
@@ -35,11 +37,10 @@ const Navbar = () => {
                     <a href="operational-planning">Operational Planning</a>
                     {dropdown === 'operational' && (
                         <ul className="dropdown">
-                            <li><a href="#process-improvement">Process Improvement</a></li>
-                            <li><a href="#technology">Leverage Technology</a></li>
-                            <li><a href="#workforcemanagement">Workforce Management</a></li>
-                            <li><a href="#supplychain">Supply Chain and Logistics</a></li>
-                            <li><a href="#riskmanagement">Risk Management</a></li>
+                            <li><Link to="process-improvement">Process Improvement</Link></li>
+                            <li><Link to="#technology">Leverage Technology</Link></li>
+                            <li><Link to="#workforcemanagement">Workforce Management</Link></li>
+                            <li><Link to="#supplychain">Supply Chain and Logistics</Link></li>
                         </ul>
                     )}
                 </li>
@@ -47,19 +48,29 @@ const Navbar = () => {
                     <a href="#softwaredevelopment">Software Development</a>
                     {dropdown === 'software' && (
                         <ul className="dropdown">
-                            <li><a href="#requirements-gathering">Requirements Gathering</a></li>
-                            <li><a href="#design">Design</a></li>
-                            <li><a href="#implementation">Implementation</a></li>
+                            <li><Link to="#requirements-gathering">Requirements Gathering</Link></li>
+                            <li><Link to="#design">Design</Link></li>
+                            <li><Link to="#implementation">Implementation</Link></li>
                         </ul>
                     )}
                 </li>
                 <li onMouseEnter={() => toggleDropdown('about')} onMouseLeave={() => toggleDropdown(null)}>
                     <a href="#about">About me</a>
-                    {dropdown === 'About me' && (
+                    {dropdown === 'about' && (
                         <ul className="dropdown">
-                            <li><a href="#My Mission">Mission</a></li>
-                            <li><a href="#Contact">Contact me</a></li>
-                            <li><a href="#My Story">My Story</a></li>
+                            <li><Link to="#My Mission">Mission</Link></li>
+                            <li><Link to="#Contact">Contact me</Link></li>
+                            <li><Link to="#My Story">My Story</Link></li>
+                        </ul>
+                    )}
+                </li>
+                <li onMouseEnter={() => toggleDropdown('industries')} onMouseLeave={() => toggleDropdown(null)}>
+                    <a href="#industries">Industries</a>
+                    {dropdown === 'industries' && (
+                        <ul className="dropdown">
+                            <li><Link to="#Financialservices">Financial Services</Link></li>
+                            <li><Link to="#Technology">Technology</Link></li>
+                            <li><Link to="#Fashion and Luxury">Fashion and Luxury</Link></li>
                         </ul>
                     )}
                 </li>
