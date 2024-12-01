@@ -1,0 +1,103 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: WHITE;
+    padding: 1rem;
+    color: BLACK;
+}
+
+.navbar-title {
+    font-size: 1.5rem;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+
+.navbar-links li {
+    position: relative;
+}
+
+.navbar-links li a {
+    color: BLACK;
+    text-decoration: none;
+}
+
+.navbar-links li a:hover {
+    text-decoration: underline;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: BLACK;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.open + .line {
+    opacity: 0;
+}
+
+.open + .open {
+    transform: rotate(-45deg);
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: WHITE;
+    padding: 0.5rem;
+    border-radius: 4px;
+    top: 100%; /* Position below the parent */
+    left: 0;
+    z-index: 1;
+}
+
+/* Show dropdowns when parent is hovered */
+.navbar-links li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown li {
+    margin: 0;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: BLACK;
+}
+
+.dropdown li a:hover {
+    background-color: #B0E0E6; /* Change background on hover */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 1200px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: WHITE;
+    }
+    .navbar-links.open {
+        display: flex;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
