@@ -1,50 +1,53 @@
-/* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Goal_setting from './pages/Strategy/goal_setting';
-import Market_Analysis from './pages/Strategy/Market_Analysis';
-import Resource_allocation from './pages/Strategy/resource-allocation';
-import Process_improvement from './pages/operational/process_improvement';
-import Technology from './pages/operational/technology';
-import Design from './pages/softwaredevelopment/design';
-import Supplychain from './pages/operational/supplychain';
-import Implementation from './pages/softwaredevelopment/implementation';
-import Workforcemanagement from './pages/operational/workforcemanagement';
-import Contact from './pages/about/contact';
-import Mission from './pages/about/mission';
-import Requirements_gathering from './pages/softwaredevelopment/requirements_gathering';
-import My_story from './pages/about/my_story';
-import Financialservices from './pages/industries/financialservices';
-import Fashion from './pages/industries/fashion';
-import TechnologyIndustry from './pages/industries/technology';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from '../../websiterecreation/src/pages/Home';
+import Goalsetting from '../../websiterecreation/src/pages/Strategy/goal_setting';
+import Marketanalysis from '../../websiterecreation/src/pages/Strategy/Market_Analysis';
+import Resourceallocation from '../../websiterecreation/src/pages/Strategy/resource-allocation';
+import Processimprovement from '../../websiterecreation/src/pages/operational/process_improvement';
+import Technology from '../../websiterecreation/src/pages/operational/technology';
+import Design from '../../websiterecreation/src/pages/softwaredevelopment/design';
+import Supplychain from '../../websiterecreation/src/pages/operational/supplychain';
+import Implementation from '../../websiterecreation/src/pages/softwaredevelopment/implementation';
+import Workforcemanagement from '../../websiterecreation/src/pages/operational/workforcemanagement';
+import Contact from '../../websiterecreation/src/pages/about/contact';
+import Mission from '../../websiterecreation/src/pages/about/mission';
+import Requirementsgathering from '../../websiterecreation/src/pages/softwaredevelopment/requirements_gathering';
+import Mystory from '../../websiterecreation/src/pages/about/my_story';
+import Financialservices from '../../websiterecreation/src/pages/industries/financialservices';
+import Fashion from '../../websiterecreation/src/pages/industries/fashion';
+import TechnologyIndustry from '../../websiterecreation/src/pages/industries/technology';
+import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Route, Routes } from 'react-router-dom';
+import ErrorBoundary from '../../websiterecreation/src/errorboundary/ErrorHandling';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="goal_setting" element={<Goal_setting />} />
-          <Route path="Market_Analysis" element={<Market_Analysis />} />
-          <Route path="resource-allocation" element={<Resource_allocation />} />
-          <Route path="process_improvement" element={<Process_improvement />} />
-          <Route path="supplychain" element={<Supplychain />} />
-          <Route path="technology" element={<Technology />} />
-          <Route path="workforcemanagement" element={<Workforcemanagement />} />
-          <Route path="design" element={<Design />} />
-          <Route path="implementation" element={<Implementation />} />
-          <Route path="requirements_gathering" element={<Requirements_gathering />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="mission" element={<Mission />} />
-          <Route path="my_story" element={<My_story />} />
-          <Route path="financialservices" element={<Financialservices />} />
-          <Route path="fashion" element={<Fashion />} />
-          <Route path="technology" element={<TechnologyIndustry />} />
-        </Routes>
-      </Router>
+      <ErrorBoundary>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="goal_setting" element={<Goalsetting />} />
+            <Route path="Market_Analysis" element={<Marketanalysis />} />
+            <Route path="resource-allocation" element={<Resourceallocation />} />
+            <Route path="process_improvement" element={<Processimprovement />} />
+            <Route path="supplychain" element={<Supplychain />} />
+            <Route path="technology" element={<Technology />} />
+            <Route path="workforcemanagement" element={<Workforcemanagement />} />
+            <Route path="design" element={<Design />} />
+            <Route path="implementation" element={<Implementation />} />
+            <Route path="requirements_gathering" element={<Requirementsgathering />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="mission" element={<Mission />} />
+            <Route path="my_story" element={<Mystory />} />
+            <Route path="financialservices" element={<Financialservices />} />
+            <Route path="fashion" element={<Fashion />} />
+            <Route path="technology" element={<TechnologyIndustry />} />
+          </Routes>
+        </BrowserRouter>
+      </ErrorBoundary>
     </div>
   );
 }
